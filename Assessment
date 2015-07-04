@@ -1,0 +1,31 @@
+/*
+Farmers Market Assessment using SQL Express. 
+Analyze data throughout USA using annual report. 
+Exclude all markets located w/in a city w/more-than-one word in its name.
+Use data in file to answer Q's & explain techniques used to arrive at each answer.
+
+Q's: 
+1. How many markets sell vegetables, but not anything sweet?
+2. What state has the highest density of famers market per capita? What state has the lowest?
+3. How many US farmers markets are between the Rocky Mountains and the Mississippi river?
+4. What is one fact or pattern about farmers markets in the United States that you can recognize using the raw data?
+*/
+
+/* First I research/downloaded SQL, then I covereted csv file to excell.
+Then I created a new query and imported the excel doc. lots of online tutorials to get me here.
+*/
+
+/* Now I will create a query based on the imported information to answer the questions. I found Query’s design query in 
+editor and used that to pars the information out. Yeah. Next I read about filter conditions, characters and wild card 
+character. This helped me sort the list to get the answers. 
+*/
+
+/* Question 1 Answer: 356 unless Bakedgoods are sweet then it could be less. */
+SELECT city, MarketName, Vegetables, Honey, Jams, Maple, Bakedgoods
+FROM  ['farmers-markets']
+WHERE [city] not like '% %' 
+and [Vegetables]like 'Y' and [Honey] like 'N' 
+and [Jams] like 'N' and [Maple] like 'N' 
+
+/*Question 2 Answer:     
+*/
