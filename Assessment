@@ -77,8 +77,8 @@ Q3: How many US farmers markets are between the Rocky Mountains and the Mississi
 First I ask the questions: 
 Longitued and lattitude question 
 What are the Rocky mountains? 
-What is there long/lat?
-What is the long/lat of Mississippi Rvr?
+What is there long/lat? A: The absolute is: 43.7400 degrees North, 110.8000 degrees West. 
+What is the long/lat of Mississippi Rvr? A: The absolute is: 29.1536 degrees North, 89.2508 degrees West
 What code in SQL Express will show me how many farmers markets are between RM/LL and MR/LL? 
 
 */
