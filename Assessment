@@ -11,21 +11,62 @@ Q's:
 4. What is one fact or pattern about farmers markets in the United States that you can recognize using the raw data?
 */
 
-/* First I research/downloaded SQL, then I covereted csv file to excell.
-Then I created a new query and imported the excel doc. lots of online tutorials to get me here.
-*/
+/* techniques used to arrive at each answer for answer number 1:
 
-/* Now I will create a query based on the imported information to answer the questions. I found Query’s design query in 
+First I research/downloaded SQL, then I covereted csv file to excell.
+Then I created a new query and imported the excel doc. lots of online tutorials to get me here.
+
+Now I will create a query based on the imported information to answer the questions. I found Query’s design query in 
 editor and used that to pars the information out. Yeah. Next I read about filter conditions, characters and wild card 
 character. This helped me sort the list to get the answers. 
 */
 
-/* Question 1 Answer: 356 unless Bakedgoods are sweet then it could be less. */
+/* Question 1 Answer: 356 Markets sell vegetables but not anything sweet, 
+unless Bakedgoods are sweet then it could be less then 356. */
+
+/* here is how I got the answer and you should be able to copy and paste this into SQL to see the answer*/
+
 SELECT city, MarketName, Vegetables, Honey, Jams, Maple, Bakedgoods
 FROM  ['farmers-markets']
 WHERE [city] not like '% %' 
 and [Vegetables]like 'Y' and [Honey] like 'N' 
 and [Jams] like 'N' and [Maple] like 'N' 
 
-/*Question 2 Answer:     
+/*Question 2 Answer:  California has the highest density of farmers market per capita (759).   
+Virgin Islands is not a state but they do have the lowest number in the database (4). 
+So the next one would be Delaware with 29. 
+There are three states that have spelling errors that cause the data to be skeded Virigina & Virginia (total of 246), 
+Miinesota & Minnesota (total 186), and California and Calafornia (total of 759). 
 */
+
+/* here is how I got the answer and you should be able to copy and paste this into SQL to see the answer*/
+
+SELECT State,Count([state])AS markets
+FROM  ['farmers-markets']
+GROUP BY State 
+ORDER BY State DESC
+
+/*The above code asks SQL to pull the State information and count how many times it sees the same State and then 
+lable the catigory markets. It pulls from the farmers market database and groups together all the same State then it
+lists the data of State in Decscending order. 
+
+Techniques used to arrive at each answer:
+
+I had first ordered by markets in desc order so i could see the total of each State.
+Then i switched to state so i could see the duplicates. My journey getting here was long with lots of tutorials on line. 
+Also I looked at the excel spreadsheet so i could get my barrings on how to ask the correct question on line. I used my 
+notebook to track each code I tried and each question that I broke down. I wanted to go down a rabit hole and generate the 
+perfect answer in SQL. I wanted to find a way to merge the states information that was spelled incorrectly and then redo 
+the list. For me it would be faster if I were to update the Excel sheet and then re-import the excel doc. I did not do this 
+because I am trying to learn how to do it in SQL. However, since I know I have the right answers i will move on and maybe 
+come back to this later to perfect it. 
+
+Some of my questions that lead me here were: 
+
+How many of row B have the same State name?
+Find rows that have the same value!
+how do I have it tell me who is the max and who is the min to confirm the results I got above?
+how do i merge two columns of database in SQL express
+wait: how do I combine the data in two columns into one column.
+
+*/Question 3 Answer:
