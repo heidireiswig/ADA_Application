@@ -85,6 +85,8 @@ asked the internet: how do i write a code in sql express to find everything in b
 here is where i admit I am in the process of refressing my math skills. change q' to 
 SQL Query for Performing Radius Search based on Latitude Longitude - sounds much closer to what I need. 
 Find zip codes within a radius -search how to. article: Implementing Zip Code Proximity Functions in MS SQL Server
+Difference between numeric,float and decimal in sql server article. looks like I need to turn the lon/lat to decimal.
+
 
 */
 
