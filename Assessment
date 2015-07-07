@@ -48,7 +48,7 @@ GROUP BY State
 ORDER BY State DESC
 
 /*The above code asks SQL to pull the State information and count how many times it sees the same State and then 
-lable the catigory markets. It pulls from the farmers market database and groups together all the same State then it
+lable the category markets. It pulls from the farmers market database and groups together all the same State then it
 lists the data of State in Decscending order. 
 
 Techniques used to arrive at each answer:
@@ -76,16 +76,17 @@ wait: how do I combine the data in two columns into one column.
 Techniques used to arrive at the answer:
 Q3: How many US farmers markets are between the Rocky Mountains and the Mississippi river?
 First I ask the questions: 
-Longitued and lattitude question 
-What are the Rocky mountains? 
+this is a Longitued and lattitude question 
+Where are the Rocky mountains? 
 What is there long/lat? A: The absolute is: 43.7400 degrees North, 110.8000 degrees West. 
 What is the long/lat of Mississippi Rvr? A: The absolute is: 29.1536 degrees North, 89.2508 degrees West
 How many farmers-markets are between RM 43.7400N,110.800W and MR 29.1536N, 89.2508W? 
-search web selecting data within SQL.
+search web "selecting data within ranges in SQL".
 Found a formulat I thought would work relpaced it with my database. 
 */
 
 /* here is how I got the answer and you should be able to copy and paste this into SQL to see the answer*/
+
 SELECT city, Longitude
 FROM ['farmers-markets']
 WHERE (Longitude BETWEEN -110.8 AND -89.2508) 
@@ -93,6 +94,6 @@ AND (city not like '% %')
 
 /*Question 4: What is one fact or pattern about farmers markets in the United States that you can 
 recognize using the raw data?
-Question 4: Answer Several cities are misspelled. There are 8145 rows. There are sevearl rows of information I did not need 
+Question 4 Answer: Several cities are misspelled. There are 8145 rows. There are sevearl rows of information I did not need 
 for my queries. 
 */
