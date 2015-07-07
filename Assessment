@@ -71,7 +71,7 @@ how do i merge two columns of database in SQL express
 wait: how do I combine the data in two columns into one column.
 */
 
-*/Question 3 Answer: 1429 - this is estimated based on Longitude absolutes. 
+*/Question 3 Answer: 1429 - this is estimated based on Longitude absolutes.*/
 
 Techniques used to arrive at the answer:
 Q3: How many US farmers markets are between the Rocky Mountains and the Mississippi river?
@@ -91,3 +91,8 @@ FROM ['farmers-markets']
 WHERE (Longitude BETWEEN -110.8 AND -89.2508) 
 AND (city not like '% %')
 
+/*Question 4: What is one fact or pattern about farmers markets in the United States that you can 
+recognize using the raw data?
+Question 4: Answer Several cities are misspelled. There are 8145 rows. There are sevearl rows of information I did not need 
+for my queries. 
+*/
