@@ -43,6 +43,7 @@ Miinesota & Minnesota (total 186), and California and Calafornia (total of 759).
 
 SELECT State,Count([state])AS markets
 FROM  ['farmers-markets']
+WHERE(city not like '% %')
 GROUP BY State 
 ORDER BY State DESC
 
@@ -70,9 +71,9 @@ how do i merge two columns of database in SQL express
 wait: how do I combine the data in two columns into one column.
 */
 
-*/Question 3 Answer:
+*/Question 3 Answer: 1429 - this is estimated based on Longitude absolutes. 
 
-Techniques used to arrive at each answer:
+Techniques used to arrive at the answer:
 Q3: How many US farmers markets are between the Rocky Mountains and the Mississippi river?
 First I ask the questions: 
 Longitued and lattitude question 
@@ -80,15 +81,13 @@ What are the Rocky mountains?
 What is there long/lat? A: The absolute is: 43.7400 degrees North, 110.8000 degrees West. 
 What is the long/lat of Mississippi Rvr? A: The absolute is: 29.1536 degrees North, 89.2508 degrees West
 How many farmers-markets are between RM 43.7400N,110.800W and MR 29.1536N, 89.2508W? 
-What code in SQL Express will show me how many farmers markets are between RM/LL and MR/LL? 
-asked the internet: how do i write a code in sql express to find everything in between longitude and latitude of two points?
-here is where i admit I am in the process of refressing my math skills. change q' to 
-SQL Query for Performing Radius Search based on Latitude Longitude - sounds much closer to what I need. 
-Find zip codes within a radius -search how to. article: Implementing Zip Code Proximity Functions in MS SQL Server
-Difference between numeric,float and decimal in sql server article. looks like I need to turn the lon/lat to decimal.
-ok here is the first possibility: 
-FUNCTION - computes circle distance between 2 points. 
-
-
+search web selecting data within SQL.
+Found a formulat I thought would work relpaced it with my database. 
 */
+
+/* here is how I got the answer and you should be able to copy and paste this into SQL to see the answer*/
+SELECT city, Longitude
+FROM ['farmers-markets']
+WHERE (Longitude BETWEEN -110.8 AND -89.2508) 
+AND (city not like '% %')
 
